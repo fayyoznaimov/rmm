@@ -8,6 +8,7 @@ const { deleteMachine } = require("../controllers/deleteMachine");
 const { getCategories } = require("../controllers/getCategories");
 const { signUp } = require("../controllers/signUp");
 const { login } = require("../controllers/login");
+const { updatePart } = require("../controllers/updatePart");
 
 const router = require("express").Router();
 
@@ -20,6 +21,7 @@ router
   .get("/get-machines", getMachines)
   .get("/get-categories", getCategories)
   .delete("/delete-part/:id", deletePart)
-  .delete("/delete-machine/:id", deleteMachine);
+  .delete("/delete-machine/:id", deleteMachine)
+  .put('/parts/:partId', updatePart);
 
 module.exports = router;
