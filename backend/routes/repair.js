@@ -9,7 +9,9 @@ const { getCategories } = require("../controllers/getCategories");
 const { signUp } = require("../controllers/signUp");
 const { login } = require("../controllers/login");
 const { updatePart } = require("../controllers/updatePart");
-
+const { searchByNumberResultCategory } = require("../controllers/searchByNumberResultCategory");
+const { updateMachine } = require("../controllers/updateMachine");
+const { getPartsOfMachine } = require("../controllers/getPartsOfMachine");
 const router = require("express").Router();
 
 router
@@ -20,8 +22,11 @@ router
   .post("/login",login)
   .get("/get-machines", getMachines)
   .get("/get-categories", getCategories)
+  .get("/get-parts-of-machine", getPartsOfMachine)
   .delete("/delete-part/:id", deletePart)
   .delete("/delete-machine/:id", deleteMachine)
-  .put('/parts/:partId', updatePart);
+  .put('/parts/:partId', updatePart)
+  .put('/parts/:partId', updateMachine)
+  .get('/parts-by-category', searchByNumberResultCategory);
 
 module.exports = router;

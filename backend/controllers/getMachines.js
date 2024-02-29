@@ -1,14 +1,14 @@
 const MachineSchema = require("../models/MachineModel");
 
 exports.getMachines = async (req, res) => {
-  const { category, company, model, machineNumber, page = 1, limit = 10 } = req.query;
+  const { category, company, model, number, page = 1, limit = 10 } = req.query;
 
   const query = {};
 
   if (category) query.category = category;
   if (company) query.company = company;
   if (model) query.model = model;
-  if (machineNumber) query.machineNumber = machineNumber;
+  if (number) query.number = number;
 
   const skip = (page - 1) * limit;
 

@@ -51,7 +51,7 @@ exports.addPart = async (req, res) => {
 
     return res.status(200).json({ message: "Part added successfully" });
   } catch (error) {
-    return res.status(500).json({ message: "Server Error: " + error });
+    return res.status(500).json({ message: "Нет такой машины: " + error });
   }
 };
 
